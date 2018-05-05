@@ -17,11 +17,11 @@ tmux new-session -d -s $session -n scratch
 
 
 # LOCAL
-tmux new-window -t $session:1 -n "local" -c ~/work
-tmux split-window -h -p 40
-tmux split-window -v  sudo su -
-tmux split-window -h -p 40
-tmux send-keys "htop" Enter
+tmux new-window -t $session:1 -n "local" -c ~/work/CURRENT
+tmux split-window -v sudo su -
+tmux split-window -h -p 40 sudo htop
+tmux selectp -t 0
+tmux split-window -h -p 40 "cd ~/work/CURRENT"
 
 # ZTJ
 tmux new-window -t $session:2 -n "zivotjinak" ssh ztj
