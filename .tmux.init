@@ -21,7 +21,8 @@ tmux new-window -t $session:1 -n "local" -c ~/work/CURRENT
 tmux split-window -v sudo su -
 tmux split-window -h -p 40 sudo htop
 tmux selectp -t 0
-tmux split-window -h -p 40 "cd ~/work/CURRENT"
+tmux split-window -h -p 40
+tmux send-keys "cd ~/work/CURRENT" Enter
 
 # ZTJ
 tmux new-window -t $session:2 -n "zivotjinak" ssh ztj
@@ -40,3 +41,5 @@ tmux selectp -t 0
 
 # Finished setup, attach to the tmux session!
 tmux attach-session -t $session
+
+
